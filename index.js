@@ -28,7 +28,7 @@
             return html.replace(replaceConfig.target, replaceValues.join(''));
         };
         Plugin.removeLinkTag = function (html, cssFileName) {
-            return html.replace(new RegExp(`<link[^>]+href=['"]${cssFileName}['"][^>]+(>|\/>|><\/link>)`),
+            return html.replace(new RegExp('<link href="' + cssFileName + '\\?\\w+" rel="stylesheet">'),
 , '');
         };
         Plugin.cleanUp = function (html, replaceConfig) {
